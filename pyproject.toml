@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wirekx"
+version = "0.1.0"
+description = "Experimental anonymous X25519 key exchange wire format."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+keywords = ["x25519", "key-exchange", "cryptography", "experimental"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security :: Cryptography",
+]
+dependencies = [
+  "cryptography>=49.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/wirekx/wirekx"
+Repository = "https://github.com/wirekx/wirekx"
+Issues = "https://github.com/wirekx/wirekx/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wirekx"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/pub_pypi",
+]
